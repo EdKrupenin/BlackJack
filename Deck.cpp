@@ -1,5 +1,7 @@
 #include "Deck.h"
 
+#include <random>
+
 Deck::Deck()
 {
 	m_Cards.reserve(52);
@@ -24,7 +26,7 @@ void Deck::Populate()
 
 void Deck::Shuffle()
 {
-	random_shuffle(m_Cards.begin(), m_Cards.end());
+	shuffle(m_Cards.begin(), m_Cards.end(), std::mt19937(std::random_device()()));
 }
 
 void Deck::Deal(Hand& aHand)

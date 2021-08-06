@@ -14,7 +14,7 @@ std::ostream& operator<<(std::ostream& out, const Card& card)
 	const std::string SUITS[] = { "c", "d", "h", "s" };
 
 	if (card.is_Face_Up) {
-		out << RANKS[(int)card.valueCard] << SUITS[(int)card.suitCard]<<" ";
+		out << RANKS[static_cast<int>(card.valueCard)] << SUITS[static_cast<int>(card.suitCard)]<<" ";
 	}
 	else
 	{
